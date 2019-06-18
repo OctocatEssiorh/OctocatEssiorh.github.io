@@ -401,6 +401,9 @@ img {
     .showcase-content {
         margin-top: 3rem;
     }
+    .fb-page {
+    	display: none;
+    }
 }
 
 
