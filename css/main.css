@@ -354,6 +354,10 @@ img {
 }
 
 @media (max-width: 700px) {
+	.container{
+		max-width: 90%;
+		padding: 0;
+	}
     .showcase::after {
         background: rgba(0, 0, 0, 0.6);
         box-shadow: inset 80px 80px 150px #000000, inset -80px -80px 150px #000000;
