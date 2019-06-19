@@ -309,6 +309,10 @@ img {
         height: 70vh;
     }
 
+    .container {
+        max-width: 90%;
+    }
+
     .hide-sm {
         display: none;
     }
@@ -358,12 +362,14 @@ img {
         max-width: 95%;
         padding: 0;
     }
+
     .fb-page {
-    	display: none !important;
+        display: none !important;
     }
+
     #tab-2-content,
-    #tab-2{
-    	display: none !important;
+    #tab-2 {
+        display: none !important;
     }
 
     .showcase::after {
