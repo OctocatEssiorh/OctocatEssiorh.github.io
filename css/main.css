@@ -359,7 +359,7 @@ img {
         padding: 0;
     }
     .fb-page {
-    	display: none;
+    	display: none !important;
     }
 
     .showcase::after {
