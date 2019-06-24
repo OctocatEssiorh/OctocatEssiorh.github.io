@@ -197,13 +197,16 @@ img {
     grid-gap: 2rem;
     text-align: center;
 }
-.fb-page{
-	border-left: 30px solid var(--primary-color);
-	border-right: 30px solid var(--primary-color);
-	border-radius: 25px;
-	border-top: 50px solid var(--primary-color);
-	border-bottom: 50px solid var(--primary-color);
-	box-shadow: 15px var(--light-color);
+
+.fb-page {
+    border-left: 30px solid var(--primary-color);
+    border-right: 30px solid var(--primary-color);
+    border-radius: 25px;
+    border-top: 50px solid var(--primary-color);
+    border-bottom: 50px solid var(--primary-color);
+    -webkit-box-shadow: 11px 9px 23px 13px rgba(244,244,244,0.75);
+    -moz-box-shadow: 11px 9px 23px 13px rgba(244,244,244,0.75);
+    box-shadow: 11px 9px 23px 13px rgba(244,244,244,0.75);
 }
 
 .table {
