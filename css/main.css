@@ -197,6 +197,10 @@ img {
     grid-gap: 2rem;
     text-align: center;
 }
+.fb-page{
+	border: 20px solid var(--primary-color);
+	border-radius: 25px;
+}
 
 .table {
     width: 100%;
