@@ -200,6 +200,7 @@ img {
 .fb-page{
 	border: 30px solid var(--primary-color);
 	border-radius: 25px;
+	border-bottom: 50px solid var(--primary-color);
 }
 
 .table {
