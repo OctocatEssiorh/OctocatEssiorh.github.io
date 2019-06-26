@@ -345,7 +345,7 @@ img {
     }
 
     .showcase::after {
-        box-shadow: inset 1px -1px 250px #00000024, inset -1px 1px 250px #00000024;
+        box-shadow: inset 1px -1px 250px #000000b5, inset -1px 1px 250px #000000b5;
     }
 
     .container {
@@ -413,7 +413,7 @@ img {
 
     .showcase::after {
         background: rgba(0, 0, 0, 0.6);
-        box-shadow: inset 80px 80px 150px #000000, inset -80px -80px 150px #000000;
+        box-shadow: inset 80px 80px 150px #00000024, inset -80px -80px 150px #00000024;
     }
 
     .showcase-content h1 {
