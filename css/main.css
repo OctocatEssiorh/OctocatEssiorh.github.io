@@ -344,6 +344,10 @@ img {
         height: 70vh;
     }
 
+    .showcase::after {
+        box-shadow: inset 1px -1px 250px #000000, inset -1px 1px 250px #000000;
+    }
+
     .container {
         max-width: 90%;
     }
