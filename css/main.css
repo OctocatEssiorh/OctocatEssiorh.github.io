@@ -158,6 +158,26 @@ img {
     padding: 3rem 0;
     background: #000;
     color: #fff;
+    background: linear-gradient(-45deg, #cd2715, #999999, #090909, #cd2715);
+    background-size: 400% 400%;
+    position: relative;
+    -webkit-animation: change 10s ease-in-out infinite;
+    -o-animation: change 10s ease-in-out infinite;
+    animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 /* Hide initial content */
@@ -209,42 +229,114 @@ img {
     box-shadow: 0px -13px 20px 2px rgba(244, 244, 244, 0.75);
 }
 
-.table {
-    width: 100%;
-    margin-top: 2rem;
-    border-collapse: collapse;
-    border-spacing: 0;
+
+.card {
+    position: relative;
+    background: #333;
+    border-radius: 10px;
+    padding: 2rem;
+    color: #aaa;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.5s ease-out;
 }
 
-.table thead th {
-    text-transform: uppercase;
-    padding: 0.8rem;
+.card__image-container {
+    margin: -2rem -2rem 1rem -2rem;
 }
 
-.table tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+.card__line {
+    opacity: 0;
+    animation: LineFadeIn .8s .8s forwards ease-in;
 }
 
-.table tbody tr td {
-    color: #999;
-    padding: 0.8rem 1.2rem;
-    text-align: center;
+.card__image {
+    opacity: 0;
+    animation: ImageFadeIn .8s 1.4s forwards;
 }
 
-.table tbody tr td:first-child {
-    text-align: left;
+.card__title {
+    color: white;
+    margin-top: 0;
+    font-weight: 800;
+    letter-spacing: 0.01em;
 }
 
-.table tbody tr:nth-child(odd) {
-    background: #222;
+.card__content {
+    margin-top: -1rem;
+    opacity: 0;
+    animation: ContentFadeIn .8s 1.6s forwards;
 }
 
+.card__svg {
+    position: absolute;
+    left: 0;
+    top: 115px;
+}
+
+@keyframes LineFadeIn {
+    0% {
+        opacity: 0;
+        d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");
+        stroke: #fff;
+    }
+
+    50% {
+        opacity: 1;
+        d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");
+        stroke: #CD2715;
+    }
+
+    100% {
+        opacity: 1;
+        d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");
+        stroke: #CD2715;
+    }
+}
+
+@keyframes ContentFadeIn {
+    0% {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ImageFadeIn {
+    0% {
+        transform: translate(-0.5rem, -0.5rem) scale(1.05);
+        opacity: 0;
+        filter: blur(2px);
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(2px);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+.card:hover {
+    -o-transform: translate(-20px, 20px);
+    -ms-transform: translate(-20px, 20px);
+    -moz-transform: translate(-20px, 20px);
+    -webkit-transform: translate(-20px, 20px);
+    transform: translate(-20px, 20px);
+}
 
 /* Container */
 .container {
-    max-width: 70%;
+    max-width: 90%;
     margin: auto;
     overflow: hidden;
     padding: 0 2rem;
@@ -572,4 +664,338 @@ body.tight .wrapper {
         transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
         opacity: 0;
     }
+}
+
+ol.organizational-chart,
+ol.organizational-chart ol,
+ol.organizational-chart li,
+ol.organizational-chart li>div {
+    position: relative;
+}
+
+ol.organizational-chart,
+ol.organizational-chart ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol.organizational-chart {
+    text-align: center;
+}
+
+ol.organizational-chart ol {
+    padding-top: 1em;
+}
+
+ol.organizational-chart ol:before,
+ol.organizational-chart ol:after,
+ol.organizational-chart li:before,
+ol.organizational-chart li:after,
+ol.organizational-chart>li>div:before,
+ol.organizational-chart>li>div:after {
+    background-color: #b7a6aa;
+    content: '';
+    position: absolute;
+}
+
+ol.organizational-chart ol>li {
+    padding: 1em 0 0 1em;
+}
+
+ol.organizational-chart>li ol:before {
+    height: 1em;
+    left: 50%;
+    top: 0;
+    width: 3px;
+}
+
+ol.organizational-chart>li ol:after {
+    height: 3px;
+    left: 3px;
+    top: 1em;
+    width: 50%;
+}
+
+ol.organizational-chart>li ol>li:not(:last-of-type):before {
+    height: 3px;
+    left: 0;
+    top: 2em;
+    width: 1em;
+}
+
+ol.organizational-chart>li ol>li:not(:last-of-type):after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 3px;
+}
+
+ol.organizational-chart>li ol>li:last-of-type:before {
+    height: 3px;
+    left: 0;
+    top: 2em;
+    width: 1em;
+}
+
+ol.organizational-chart>li ol>li:last-of-type:after {
+    height: 2em;
+    left: 0;
+    top: 0;
+    width: 3px;
+}
+
+ol.organizational-chart li>div {
+    background-color: #fff;
+    border-radius: 3px;
+    min-height: 2em;
+}
+
+/*** PRIMARY ***/
+ol.organizational-chart>li>div {
+    background: linear-gradient(-45deg, #cd2715, #999999, #090909, #cd2715);
+    margin-right: 1em;
+}
+
+ol.organizational-chart>li>div:before {
+    bottom: 2em;
+    height: 3px;
+    right: -1em;
+    width: 1em;
+}
+
+ol.organizational-chart>li>div:first-of-type:after {
+    bottom: 0;
+    height: 2em;
+    right: -1em;
+    width: 3px;
+}
+
+ol.organizational-chart>li>div+div {
+    margin-top: 1em;
+}
+
+ol.organizational-chart>li>div+div:after {
+    height: calc(100% + 1em);
+    right: -1em;
+    top: -1em;
+    width: 3px;
+}
+
+/*** SECONDARY ***/
+ol.organizational-chart>li>ol:before {
+    left: inherit;
+    right: 0;
+}
+
+ol.organizational-chart>li>ol:after {
+    left: 0;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 64em) {
+
+    ol.organizational-chart {
+        margin-left: -1em;
+        margin-right: -1em;
+    }
+
+    /* PRIMARY */
+    ol.organizational-chart>li>div {
+        display: inline-block;
+        float: none;
+        margin: 0 1em 1em 1em;
+        vertical-align: bottom;
+    }
+
+    ol.organizational-chart>li>div:only-of-type {
+        margin-bottom: 0;
+        width: calc((100% / 1) - 2em - 4px);
+    }
+
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(2),
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(2)~div {
+        width: calc((100% / 2) - 2em - 4px);
+    }
+
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(3),
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(3)~div {
+        width: calc((100% / 3) - 2em - 4px);
+    }
+
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(4),
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(4)~div {
+        width: calc((100% / 4) - 2em - 4px);
+    }
+
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(5),
+    ol.organizational-chart>li>div:first-of-type:nth-last-of-type(5)~div {
+        width: calc((100% / 5) - 2em - 4px);
+    }
+
+    ol.organizational-chart>li>div:before,
+    ol.organizational-chart>li>div:after {
+        bottom: -1em !important;
+        top: inherit !important;
+    }
+
+    ol.organizational-chart>li>div:before {
+        height: 1em !important;
+        left: 50% !important;
+        width: 3px !important;
+    }
+
+    ol.organizational-chart>li>div:only-of-type:after {
+        display: none;
+    }
+
+    ol.organizational-chart>li>div:first-of-type:not(:only-of-type):after,
+    ol.organizational-chart>li>div:last-of-type:not(:only-of-type):after {
+        bottom: -1em;
+        height: 3px;
+        width: calc(50% + 1em + 3px);
+    }
+
+    ol.organizational-chart>li>div:first-of-type:not(:only-of-type):after {
+        left: calc(50% + 3px);
+    }
+
+    ol.organizational-chart>li>div:last-of-type:not(:only-of-type):after {
+        left: calc(-1em - 3px);
+    }
+
+    ol.organizational-chart>li>div+div:not(:last-of-type):after {
+        height: 3px;
+        left: -2em;
+        width: calc(100% + 4em);
+    }
+
+    /* SECONDARY */
+    ol.organizational-chart>li>ol {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    ol.organizational-chart>li>ol:before,
+    ol.organizational-chart>li>ol>li:before {
+        height: 1em !important;
+        left: 50% !important;
+        top: 0 !important;
+        width: 3px !important;
+    }
+
+    ol.organizational-chart>li>ol:after {
+        display: none;
+    }
+
+    ol.organizational-chart>li>ol>li {
+        flex-grow: 1;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 1em;
+    }
+
+    ol.organizational-chart>li>ol>li:only-of-type {
+        padding-top: 0;
+    }
+
+    ol.organizational-chart>li>ol>li:only-of-type:before,
+    ol.organizational-chart>li>ol>li:only-of-type:after {
+        display: none;
+    }
+
+    ol.organizational-chart>li>ol>li:first-of-type:not(:only-of-type):after,
+    ol.organizational-chart>li>ol>li:last-of-type:not(:only-of-type):after {
+        height: 3px;
+        top: 0;
+        width: 50%;
+    }
+
+    ol.organizational-chart>li>ol>li:first-of-type:not(:only-of-type):after {
+        left: 50%;
+    }
+
+    ol.organizational-chart>li>ol>li:last-of-type:not(:only-of-type):after {
+        left: 0;
+    }
+
+    ol.organizational-chart>li>ol>li+li:not(:last-of-type):after {
+        height: 3px;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+}
+
+.img-container {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    position: absolute;
+    top: -35px;
+    right: 10px;
+    border-radius: 30%;
+    border: 3px solid #fff;
+    overflow: hidden;
+}
+
+.img-container a {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.img-container a img {
+    width: 90px;
+}
+
+.structure {
+    margin-top: 50px;
+}
+
+.ichnyaMKK {
+    height: 200px;
+    background: url(../img/factory.jpg) no-repeat center center/cover;
+}
+
+.ichnyaTM {
+    height: 200px;
+    background: url(../img/ichnya.svg) no-repeat center center/cover;
+}
+
+.MamaMillaTM {
+    height: 200px;
+    background: url(../img/milla.svg) no-repeat center center/cover;
+}
+
+.MiladaTM {
+    height: 200px;
+    background: url(../img/milada.svg) no-repeat center center/cover;
+}
+
+.proviant {
+    height: 200px;
+    background: url(../img/delivery.jpg) no-repeat center center/cover;
+}
+
+.agro-path {
+    height: 200px;
+    background: url(../img/agro-path.jpg) no-repeat center center/cover;
+}
+
+.landBank {
+    height: 200px;
+    background: url(../img/tractor.jpg) no-repeat center center/cover;
+}
+
+.obmachStars {
+    height: 200px;
+    background: url(../img/cows.jpg) no-repeat center center/cover;
+}
+
+.shadow-bg {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(76, 76, 76, 1) 0%, rgba(89, 89, 89, 0.91) 12%, rgba(102, 102, 102, 0.81) 25%, rgba(71, 71, 71, 0.71) 39%, rgba(44, 44, 44, 0.63) 50%, rgba(0, 0, 0, 0.62) 51%, rgba(17, 17, 17, 0.55) 60%, rgba(43, 43, 43, 0.43) 76%, rgba(28, 28, 28, 0.32) 91%, rgba(19, 19, 19, 0.25) 100%);
 }
