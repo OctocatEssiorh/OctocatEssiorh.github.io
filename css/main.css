@@ -212,7 +212,7 @@ img {
 #tab-2-content .tab-2-content-bottom {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     text-align: center;
 }
@@ -997,4 +997,30 @@ ol.organizational-chart>li>ol:after {
     height: 100%;
     width: 100%;
     background: linear-gradient(135deg, rgba(76, 76, 76, 1) 0%, rgba(89, 89, 89, 0.91) 12%, rgba(102, 102, 102, 0.81) 25%, rgba(71, 71, 71, 0.71) 39%, rgba(44, 44, 44, 0.63) 50%, rgba(0, 0, 0, 0.62) 51%, rgba(17, 17, 17, 0.55) 60%, rgba(43, 43, 43, 0.43) 76%, rgba(28, 28, 28, 0.32) 91%, rgba(19, 19, 19, 0.25) 100%);
+}
+
+.yt-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-left: 30px solid var(--dark-color);
+    border-right: 30px solid var(--dark-color);
+    border-radius: 25px;
+    border-top: 50px solid var(--dark-color);
+    border-bottom: 50px solid var(--dark-color);
+}
+
+.yt-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1400px) {
+    #tab-2-content .tab-2-content-bottom {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
