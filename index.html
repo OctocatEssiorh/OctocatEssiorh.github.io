@@ -10,6 +10,9 @@
     <script src="js/main.js" defer></script>
     <script src="https://kit.fontawesome.com/a0d347a62a.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    function play() { document.getElementById('vidwrap').innerHTML = '<iframe width="1280" height="720" src="https://www.youtube.com/embed/xRP1Rt8Vc48" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; }
+    </script>
 </head>
 
 <body>
@@ -138,8 +141,10 @@
                         <div class="fb-page" data-href="https://www.facebook.com/ichnyaMKK/" data-tabs="timeline" data-width="500" data-height="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                             <blockquote cite="https://www.facebook.com/ichnyaMKK/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ichnyaMKK/">Ічнянський МКК</a></blockquote>
                         </div>
-                        <div class="yt-container">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xRP1Rt8Vc48" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div>
+                            <div id="background-video">
+                                <div class="yt-container" onclick="play();" id="vidwrap"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
