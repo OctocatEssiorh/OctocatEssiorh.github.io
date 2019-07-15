@@ -923,7 +923,10 @@ ol.organizational-chart>li>ol:after {
 
 @media (max-width: 1400px) {
     #tab-2-content .tab-2-content-bottom {
-        grid-template-columns: fit-content(40%);
+        display: flex;
+        -webkit-flex-direction: column; 
+  		flex-direction: column; 
+  		align-self: center;
     }
 }
 
