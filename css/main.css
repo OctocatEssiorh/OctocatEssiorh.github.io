@@ -219,6 +219,7 @@ img {
 }
 
 .fb-page {
+	margin: 0 auto;
     border-left: 30px solid var(--primary-color);
     border-right: 30px solid var(--primary-color);
     border-radius: 25px;
@@ -924,9 +925,8 @@ ol.organizational-chart>li>ol:after {
 @media (max-width: 1400px) {
     #tab-2-content .tab-2-content-bottom {
         display: flex;
-        -webkit-flex-direction: column; 
-  		flex-direction: column; 
-  		align-self: center;
+        -webkit-flex-direction: column;
+        flex-direction: column;
     }
 }
 
@@ -1153,9 +1153,10 @@ ol.organizational-chart>li>ol:after {
         .footer-copyright {
             margin: 10px;
         }
+
         .partners {
-        font-size: 0.8em;
-    }
+            font-size: 0.8em;
+        }
     }
 
     @media(max-height: 600px) {
