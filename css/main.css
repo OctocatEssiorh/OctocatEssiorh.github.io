@@ -1086,6 +1086,10 @@ ol.organizational-chart>li>ol:after {
     }
 
     @media (max-width: 700px) {
+        .showcase {
+            background: url('../img/bgoffice-min.jpg') no-repeat center center/cover;
+        }
+
         .container {
             max-width: 95%;
             padding: 0;
