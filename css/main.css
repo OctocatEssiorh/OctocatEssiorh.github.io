@@ -929,7 +929,7 @@ ol.organizational-chart>li>ol:after {
     }
 
     .background-video {
-        margin-top: 10px;
+        margin-top: 10px !important;
     }
 }
 
